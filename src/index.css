@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Zinc based palette for a clean minimalist look */
+  --color-border: #E4E4E7;
+  --color-input: #E4E4E7;
+  --color-ring: #991B1B;
+  
+  --color-background: #FFFFFF;
+  --color-foreground: #09090B;
+
+  --color-primary: #991B1B;
+  --color-primary-foreground: #FAFAFA;
+
+  --color-secondary: #F4F4F5;
+  --color-secondary-foreground: #18181B;
+
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FAFAFA;
+
+  --color-muted: #F4F4F5;
+  --color-muted-foreground: #71717A;
+
+  --color-accent: #F4F4F5;
+  --color-accent-foreground: #18181B;
+
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #09090B;
+
+  --color-card: #FFFFFF;
+  --color-card-foreground: #09090B;
+
+  --color-success: #22C55E;
+  --color-success-foreground: #FFFFFF;
+
+  --color-warning: #F59E0B;
+  --color-warning-foreground: #FFFFFF;
+
+  /* Categories - Pastel tones */
+  --color-category-beef: #FEF2F2;
+  --color-category-beef-border: #FECACA;
+  --color-category-beef-text: #991B1B;
+
+  --color-category-chicken: #FFFBEB;
+  --color-category-chicken-border: #FDE68A;
+  --color-category-chicken-text: #92400E;
+
+  --color-category-other: #F5F3FF;
+  --color-category-other-border: #DDD6FE;
+  --color-category-other-text: #5B21B6;
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  /* Custom Animations */
+  --animate-shake: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  --animate-in: fade-in 0.2s ease-out;
+  --animate-out: fade-out 0.2s ease-in;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
