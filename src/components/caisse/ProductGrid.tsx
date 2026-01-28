@@ -74,7 +74,7 @@ function ProductCard({ product, onClick }: { product: Product; onClick: () => vo
 
 function ProductGridContent({ products: productList, onProductClick }: { products: Product[], onProductClick: (product: Product) => void }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 p-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 p-3 md:gap-4 md:p-6">
       {productList.map((product) => (
         <ProductCard
           key={product.id}
@@ -110,8 +110,8 @@ export function ProductGrid() {
     <div className="flex flex-col h-full bg-muted/10">
       <Tabs defaultValue="tous" className="flex flex-col h-full">
         {/* Category Tabs */}
-        <div className="bg-background border-b px-6 py-4 sticky top-0 z-20 shadow-sm/5">
-          <TabsList className="w-full h-12 p-1 bg-muted/50 rounded-xl">
+        <div className="bg-background border-b px-3 py-2 md:px-6 md:py-4 sticky top-0 z-20 shadow-sm/5">
+          <TabsList className="w-full h-10 md:h-12 p-1 bg-muted/50 rounded-xl">
             <TabsTrigger
               value="tous"
               className="flex-1 rounded-lg data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm transition-all"

@@ -26,14 +26,14 @@ export function CaisseScreen() {
   };
 
   return (
-    <div className="flex h-full w-full bg-muted/30">
+    <div className="flex flex-col lg:flex-row h-full w-full bg-muted/30">
       {/* Left: Product Grid */}
-      <div className="flex-1 flex flex-col min-w-0 pr-0 lg:pr-1">
+      <div className="w-full h-[60%] lg:h-full lg:flex-1 flex flex-col min-w-0 pr-0 lg:pr-1 overflow-hidden">
         <ProductGrid />
       </div>
 
       {/* Right: Cart */}
-      <div className="w-96 flex-shrink-0 bg-background border-l shadow-2xl shadow-black/5 z-10 transition-all duration-300">
+      <div className="w-full h-[40%] lg:h-full lg:w-96 flex-shrink-0 bg-background border-t lg:border-t-0 lg:border-l shadow-2xl shadow-black/5 z-10 transition-all duration-300">
         <Cart onCheckout={handleCheckout} />
       </div>
 
