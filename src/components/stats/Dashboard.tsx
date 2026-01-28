@@ -81,7 +81,7 @@ export function Dashboard() {
   }, [todaySales]);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full overflow-y-auto p-6 bg-muted/10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 w-full lg:h-full lg:overflow-y-auto p-4 lg:p-6 bg-muted/10">
       {/* Stats Cards */}
       <div className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard

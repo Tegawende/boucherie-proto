@@ -112,11 +112,47 @@ export function AppLayout({ children }: AppLayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-hidden bg-muted/30 relative">
+      <main className="flex-1 overflow-hidden bg-muted/30 relative mb-16 md:mb-0">
         <div className="absolute inset-0 overflow-y-auto w-full h-full">
           {children(currentView)}
         </div>
       </main>
+
+      {/* Mobile Bottom Navigation */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-background border-t flex items-center justify-around px-2 z-50 pb-safe">
+        <Button
+          variant="ghost"
+          onClick={() => setCurrentView('caisse')}
+          className={cn(
+            'flex flex-col items-center gap-1 h-full flex-1 rounded-none hover:bg-transparent',
+            currentView === 'caisse' ? 'text-primary' : 'text-muted-foreground'
+          )}
+        >
+          <div className={cn(
+            "p-1.5 rounded-xl transition-all",
+            currentView === 'caisse' ? "bg-primary/10" : "bg-transparent"
+          )}>
+            <ShoppingCart className="w-5 h-5" />
+          </div>
+          <span className="text-[10px] font-medium">Caisse</span>
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={() => setCurrentView('stats')}
+          className={cn(
+            'flex flex-col items-center gap-1 h-full flex-1 rounded-none hover:bg-transparent',
+            currentView === 'stats' ? 'text-primary' : 'text-muted-foreground'
+          )}
+        >
+          <div className={cn(
+            "p-1.5 rounded-xl transition-all",
+            currentView === 'stats' ? "bg-primary/10" : "bg-transparent"
+          )}>
+            <BarChart3 className="w-5 h-5" />
+          </div>
+          <span className="text-[10px] font-medium">Statistiques</span>
+        </Button>
+      </div>
     </div>
   );
 }
